@@ -249,7 +249,9 @@ document.getElementById("contactForm").addEventListener("submit", event => {
     }
 
     if (valid) {
-        success.textContent = "Pesan berhasil divalidasi dan siap dikirim.";
-        event.target.reset();
+        const emailTujuan = "wisatamedanexplore@gmail.com";
+
+    window.location.href =
+    `mailto:${emailTujuan}?subject=${encodeURIComponent("Tanya Tentang Destinasi")}&body=${encodeURIComponent(`Nama: ${name}\n\nPesan: ${message}`)}`;
     }
 });
